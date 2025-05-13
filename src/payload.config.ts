@@ -10,6 +10,9 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { Pages } from './collections/Pages'
+import { Header } from './app/globals/Header'
+import { Footer } from './app/globals/Footer'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -21,7 +24,8 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media],
+  collections: [Users, Media, Pages],
+  globals: [Header, Footer],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -39,16 +43,15 @@ export default buildConfig({
           prefix: 'media',
         },
       },
-      bucket: process.env.S3_BUCKET,
+      bucket: process.env.S3_BUCKET || '',
       config: {
         credentials: {
-          accessKeyId: process.env.S3_ACCESS_KEY_ID,
-          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+          accessKeyId: process.env.S3_ACCESS_KEY_ID || '',
+          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || '',
         },
-        region: process.env.S3_REGION,
-        endpoint: process.env.S3_ENDPOINT,
-        forcePathStyle: true,
-        // ... Other S3 configuration
+        endpoint: process.env.S3_ENDPOINT || '',
+        region: 'auto', // Cloudflare R2 doesn't use regions in the traditional sense
+        forcePathStyle: true, // Required for R2
       },
     }),
   ],
