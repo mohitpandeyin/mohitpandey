@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+// filepath: /Users/mohit-15993/sites/mohitpandey/src/app/(frontend)/[slug]/page.tsx
 
 import config from '@payload-config'
 import { getPayload } from 'payload'
@@ -43,9 +43,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params: { slug = 'index' } }) {
-  let page: PageType | null
-
-  page = await queryPageBySlug({
+  const page: PageType | null = await queryPageBySlug({
     slug,
   })
 
