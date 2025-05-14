@@ -7,7 +7,7 @@ import React, { Fragment } from 'react'
 const blockComponents = {
   cover: CoverBlockServer,
   image: ImageBlockServer,
-  richText: RichTextBlockServer,
+  richtext: RichTextBlockServer,
 }
 
 export const RenderBlocks: React.FC<{
@@ -29,7 +29,8 @@ export const RenderBlocks: React.FC<{
             if (Block) {
               return (
                 <div className="my-16" key={index}>
-                  <Block id={blockName} {...block} />
+                  {/* @ts-expect-error there may be some mismatch between the expected types */}
+                  <Block {...block} />
                 </div>
               )
             }
