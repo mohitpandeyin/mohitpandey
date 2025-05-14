@@ -26,43 +26,37 @@ export default async function HeaderServer() {
               />
             </Link>
           </div>
-          
+
           <nav className="main-navigation">
             <ul className="main-menu">
               {header.nav?.map((item) => (
-                <li 
-                  key={item.link} 
+                <li
+                  key={item.link}
                   className={`menu-item ${item.menuStyle === 'megamenu' ? 'has-megamenu' : ''} ${
                     item.menuStyle === 'dropdown' ? 'has-dropdown' : ''
                   }`}
                 >
-                  <Link href={item.link || '#'}>
-                    {item.label}
-                  </Link>
-                  
+                  <Link href={item.link || '#'}>{item.label}</Link>
+
                   {item.subnav && item.menuStyle === 'megamenu' && (
                     <div className="megamenu">
                       <div className="megamenu-inner">
                         <ul className="megamenu-links">
                           {item.subnav.map((subItem) => (
                             <li key={subItem.link} className="megamenu-item">
-                              <Link href={subItem.link || '#'}>
-                                {subItem.label}
-                              </Link>
+                              <Link href={subItem.link || '#'}>{subItem.label}</Link>
                             </li>
                           ))}
                         </ul>
                       </div>
                     </div>
                   )}
-                  
+
                   {item.subnav && item.menuStyle === 'dropdown' && (
                     <ul className="dropdown-menu">
                       {item.subnav.map((subItem) => (
                         <li key={subItem.link} className="dropdown-item">
-                          <Link href={subItem.link || '#'}>
-                            {subItem.label}
-                          </Link>
+                          <Link href={subItem.link || '#'}>{subItem.label}</Link>
                         </li>
                       ))}
                     </ul>
@@ -71,6 +65,11 @@ export default async function HeaderServer() {
               ))}
             </ul>
           </nav>
+          <div className="header-action">
+            <Link href="/contact" className="btn btn-primary">
+              Contact Us
+            </Link>
+          </div>
         </div>
       </div>
     </header>
