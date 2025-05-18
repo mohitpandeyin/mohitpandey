@@ -10,14 +10,16 @@ html {
   font-size: 18px;
   line-height: 32px;
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: system-ui;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 18px;
   line-height: 32px;
-
+  color: #333;
   margin: 0;
+  background-color: #fafafa;
 
   @media (max-width: 1024px) {
     font-size: 15px;

@@ -1,11 +1,12 @@
 import React from 'react'
 import './styles.css'
+import './pageLayout.css'
 import HeaderServer from '../blocks/global/Header/Server'
 import FooterServer from '../blocks/global/Footer/Server'
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+  description: 'A modern website with beautifully styled components',
+  title: 'My Styled Website',
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
@@ -15,7 +16,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
     <html lang="en">
       <body>
         <HeaderServer />
-        <main>{children}</main>
+        {children}
         <FooterServer />
       </body>
     </html>

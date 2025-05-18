@@ -52,8 +52,8 @@ export default async function Page({ params: { slug = 'index' } }) {
   }
 
   return (
-    <div>
+    <main className="page-wrapper">
       <RenderBlocks blocks={page.layout} />
-    </div>
+    </main>
   )
 }

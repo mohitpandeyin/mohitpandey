@@ -3,6 +3,7 @@ import ImageBlockServer from '@/app/blocks/image/Server'
 import RichTextBlockServer from '@/app/blocks/richtext/Server'
 import { Page } from '@/payload-types'
 import React, { Fragment } from 'react'
+import './renderBlocks.css'
 
 const blockComponents = {
   cover: CoverBlockServer,
@@ -19,7 +20,7 @@ export const RenderBlocks: React.FC<{
 
   if (hasBlocks) {
     return (
-      <Fragment>
+      <>
         {blocks.map((block, index) => {
           const { blockName, blockType } = block
 
@@ -28,16 +29,16 @@ export const RenderBlocks: React.FC<{
 
             if (Block) {
               return (
-                <div className="my-16" key={index}>
+                <section className={`block-section block-${blockType}`} key={index}>
                   {/* @ts-expect-error there may be some mismatch between the expected types */}
                   <Block {...block} />
-                </div>
+                </section>
               )
             }
           }
           return null
         })}
-      </Fragment>
+      </>
     )
   }
 

@@ -1,5 +1,6 @@
 import React from 'react'
+import './RichText.css'
 
 export default function RichTextBlockServer({ content }: { content: string }) {
-  return <div className="rich-text" dangerouslySetInnerHTML={{ __html: content }} />
+  return <div className="richText" dangerouslySetInnerHTML={{ __html: content }} />
 }
