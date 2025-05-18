@@ -1,7 +1,8 @@
 .richText {
-  max-width: 900px;
+  width: 100%;
+  max-width: 1180px;
   margin: 2rem auto;
-  padding: 2.5rem;
+  padding: 24px;
   color: #333;
   line-height: 1.7;
   background-color: #fff;
