@@ -1,4 +1,5 @@
 import CoverBlockServer from '@/app/blocks/cover/Server'
+import HeroBannerBlockServer from '@/app/blocks/heroBanner/Server'
 import ImageBlockServer from '@/app/blocks/image/Server'
 import RichTextBlockServer from '@/app/blocks/richtext/Server'
 import { Page } from '@/payload-types'
@@ -7,6 +8,7 @@ import './renderBlocks.css'
 
 const blockComponents = {
   cover: CoverBlockServer,
+  heroBanner: HeroBannerBlockServer,
   image: ImageBlockServer,
   richtext: RichTextBlockServer,
 }

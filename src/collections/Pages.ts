@@ -1,4 +1,5 @@
 import { Cover } from '@/app/blocks/cover/schema'
+import { HeroBanner } from '@/app/blocks/heroBanner/schema'
 import { Image } from '@/app/blocks/image/schema'
 import { RichText } from '@/app/blocks/richtext/schema'
 
@@ -26,7 +27,7 @@ export const Pages: CollectionConfig = {
       name: 'layout',
       label: 'Layout',
       type: 'blocks',
-      blocks: [Cover, Image, RichText],
+      blocks: [Cover, HeroBanner, Image, RichText],
       required: true,
     },
   ],

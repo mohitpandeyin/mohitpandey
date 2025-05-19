@@ -174,6 +174,26 @@ export interface Page {
         blockType: 'cover';
       }
     | {
+        title: string;
+        showMarquee?: boolean | null;
+        description: string;
+        buttonText?: string | null;
+        buttonLink?: string | null;
+        bannerImage: string | Media;
+        marqueeGroup?: {
+          marqueeText?: string | null;
+          marqueeLogos?:
+            | {
+                logo: string | Media;
+                id?: string | null;
+              }[]
+            | null;
+        };
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'heroBanner';
+      }
+    | {
         image: string | Media;
         id?: string | null;
         blockName?: string | null;
@@ -313,6 +333,29 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               title?: T;
               subtitle?: T;
+              id?: T;
+              blockName?: T;
+            };
+        heroBanner?:
+          | T
+          | {
+              title?: T;
+              showMarquee?: T;
+              description?: T;
+              buttonText?: T;
+              buttonLink?: T;
+              bannerImage?: T;
+              marqueeGroup?:
+                | T
+                | {
+                    marqueeText?: T;
+                    marqueeLogos?:
+                      | T
+                      | {
+                          logo?: T;
+                          id?: T;
+                        };
+                  };
               id?: T;
               blockName?: T;
             };
