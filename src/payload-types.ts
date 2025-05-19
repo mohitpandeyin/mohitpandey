@@ -194,6 +194,28 @@ export interface Page {
         blockType: 'heroBanner';
       }
     | {
+        heading: string;
+        features?:
+          | {
+              /**
+               * The highlighted value (e.g. 24/7, 1/3, 30%, 50%)
+               */
+              value: string;
+              title: string;
+              /**
+               * SVG code for the icon
+               */
+              icon: string;
+              description: string;
+              theme: 'customerService' | 'theCost' | 'emissionsReduction' | 'fasterReporting';
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'howWeSolve';
+      }
+    | {
         image: string | Media;
         id?: string | null;
         blockName?: string | null;
@@ -355,6 +377,23 @@ export interface PagesSelect<T extends boolean = true> {
                           logo?: T;
                           id?: T;
                         };
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        howWeSolve?:
+          | T
+          | {
+              heading?: T;
+              features?:
+                | T
+                | {
+                    value?: T;
+                    title?: T;
+                    icon?: T;
+                    description?: T;
+                    theme?: T;
+                    id?: T;
                   };
               id?: T;
               blockName?: T;
