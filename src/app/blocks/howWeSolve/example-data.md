@@ -2,8 +2,30 @@
 
 When creating a 'How We Solve' block in the Payload CMS admin panel, here's an example of how to fill in the fields:
 
-## Heading
+## Section Title
 "See our net-zero emission data how we solve"
+
+## 24/7 Customer Service Description
+"Get continuous assistance to keep your sustainability journey on track, day or night."
+
+## 1/3 The Cost Description  
+"Reduce sustainability program costs by one-third compared to traditional approaches."
+
+## 30% Emissions Reduction Description
+"Achieve measurable carbon reduction within the first year."
+
+## 50% Faster Reporting Description
+"Our platform cuts report generation time in half, accelerating compliance."
+
+## Result
+
+This will create a section with:
+- A main title at the top
+- 4 feature cards displaying:
+  - **24/7** Customer Service with your custom description
+  - **1/3** The Cost with your custom description  
+  - **30%** Emissions Reduction with your custom description
+  - **50%** Faster Reporting with your custom description
 
 ## Features
 

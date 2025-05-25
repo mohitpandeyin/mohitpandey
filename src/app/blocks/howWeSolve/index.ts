@@ -1,5 +1,5 @@
-import { howWeSolveFields } from './fields'
+import { HowWeSolve } from './schema'
 
-export { howWeSolveFields }
+export { HowWeSolve }
 export * from './HowWeSolve'
 export * from './types'

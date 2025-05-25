@@ -185,3 +185,75 @@ h1, h2, h3, h4, h5, h6 {
 .skip-to-content:focus {
   top: 6px;
 }
+
+
+
+.sz-section{
+    padding: 100px 0;
+}
+/* Net0 Section Styles */
+.sz-net0-title{
+    max-width: 450px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -1.2px;
+}
+.sz-net0-cards-wrap{
+    display: flex;
+    align-items: flex-end;
+    margin-top: 60px;
+}
+.sz-net0-card{
+    width: 25%;
+}
+.sz-net0-card:not(:last-child){
+    border-right: 1px solid rgb(var(--color-dark) , 0.1);
+}
+.sz-net0-card-content{
+    padding: 32px 36px;
+    display: flex;
+    flex-direction: column;
+    transition: .3s all;
+}
+
+.sz-net0-card-content:hover{
+    background-color: rgb(var(--color-orange) , 8%);
+}
+.sz-net0-card-content:hover .sz-net0-card-title, .sz-net0-card-content:hover .sz-net0-card-subtitle-wrap{
+    color: rgb(var(--color-orange));
+}
+.sz-net0-card-title{
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    transition: .3s all;
+}
+.sz-net0-subtitle{
+    font-size: 20px;
+    font-weight: 500;
+}
+.sz-net0-card-subtitle-wrap{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: .3s all;
+}
+.sz-net0-card-desc{
+    line-height: 26px;
+}
+.sz-customer-service{
+    gap: 32px;
+}
+.sz-the-cost{
+    gap: 98px;
+}
+.sz-emissions-reduction{
+    gap: 158px;
+}
+.sz-faster-reporting{
+    gap: 238px;
+}

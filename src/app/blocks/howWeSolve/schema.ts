@@ -1,4 +1,4 @@
-import { Block } from 'payload/types'
+import { Block } from 'payload'
 
 export const HowWeSolve: Block = {
   slug: 'howWeSolve',
@@ -8,79 +8,41 @@ export const HowWeSolve: Block = {
   },
   fields: [
     {
-      name: 'heading',
-      label: 'Heading',
+      name: 'title',
+      label: 'Section Title',
       type: 'text',
       required: true,
-      defaultValue: 'See how we solve your sustainability challenges',
+      defaultValue: 'See our net-zero emission data how we slove',
     },
     {
-      name: 'features',
-      label: 'Features',
-      type: 'array',
-      minRows: 1,
-      maxRows: 4,
-      labels: {
-        singular: 'Feature',
-        plural: 'Features',
-      },
-      fields: [
-        {
-          name: 'value',
-          label: 'Value',
-          type: 'text',
-          required: true,
-          admin: {
-            description: 'The highlighted value (e.g. 24/7, 1/3, 30%, 50%)',
-          },
-        },
-        {
-          name: 'title',
-          label: 'Title',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'icon',
-          label: 'Icon',
-          type: 'textarea',
-          required: true,
-          admin: {
-            description: 'SVG code for the icon',
-          },
-        },
-        {
-          name: 'description',
-          label: 'Description',
-          type: 'textarea',
-          required: true,
-        },
-        {
-          name: 'theme',
-          label: 'Theme',
-          type: 'select',
-          required: true,
-          options: [
-            {
-              label: 'Customer Service',
-              value: 'customerService',
-            },
-            {
-              label: 'The Cost',
-              value: 'theCost',
-            },
-            {
-              label: 'Emissions Reduction',
-              value: 'emissionsReduction',
-            },
-            {
-              label: 'Faster Reporting',
-              value: 'fasterReporting',
-            },
-          ],
-          defaultValue: 'customerService',
-        },
-      ],
+      name: 'customerServiceDesc',
+      label: '24/7 Customer Service Description',
+      type: 'textarea',
+      required: true,
+      defaultValue:
+        'Get continuous assistance to keep your sustainability journey on track, day or night.',
+    },
+    {
+      name: 'costDesc',
+      label: '1/3 The Cost Description',
+      type: 'textarea',
+      required: true,
+      defaultValue:
+        'Reduce sustainability program costs by one-third compared to traditional approaches.',
+    },
+    {
+      name: 'emissionsDesc',
+      label: '30% Emissions Reduction Description',
+      type: 'textarea',
+      required: true,
+      defaultValue: 'Achieve measurable carbon reduction within the first year.',
+    },
+    {
+      name: 'reportingDesc',
+      label: '50% Faster Reporting Description',
+      type: 'textarea',
+      required: true,
+      defaultValue: 'Our platform cuts report generation time in half, accelerating compliance.',
     },
   ],
 }
