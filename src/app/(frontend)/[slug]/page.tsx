@@ -42,7 +42,8 @@ export async function generateStaticParams() {
     .map(({ slug }) => ({ slug }))
 }
 
-export default async function Page({ params: { slug = 'index' } }) {
+export default async function Page({ params }: { params: Promise<{ slug?: string }> }) {
+  const { slug = 'index' } = await params
   const page: PageType | null = await queryPageBySlug({
     slug,
   })

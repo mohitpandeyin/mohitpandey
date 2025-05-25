@@ -37,7 +37,7 @@ const nextConfig = {
   // Enable experimental features for better performance
   experimental: {
     optimizePackageImports: ['@payloadcms/ui'],
-    optimizeCss: true,
+    // optimizeCss: true, // Disabled due to critters dependency issue
   },
   // Optimize builds
   compiler: {

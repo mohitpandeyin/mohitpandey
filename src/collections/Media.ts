@@ -43,7 +43,7 @@ export const Media: CollectionConfig = {
       {
         name: 'tablet',
         width: 1024,
-        height: null, // maintain aspect ratio
+        height: undefined, // maintain aspect ratio
         position: 'centre',
         formatOptions: {
           format: 'webp',
@@ -55,7 +55,7 @@ export const Media: CollectionConfig = {
       {
         name: 'desktop',
         width: 1920,
-        height: null, // maintain aspect ratio
+        height: undefined, // maintain aspect ratio
         position: 'centre',
         formatOptions: {
           format: 'webp',
