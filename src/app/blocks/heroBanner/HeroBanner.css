@@ -1,14 +1,3 @@
-.hero-banner {
-  --color-primary-dark: 23, 8, 1;
-  --color-light: 243, 244, 246;
-  --color-white: 255, 255, 255;
-  --color-secondary: 0, 156, 160;
-  --color-orange: 251, 133, 0;
-  --color-dark: 0, 53, 65;
-  --color-bg-light: 249, 251, 252;
-  --color-mid-black: 28, 17, 0;
-}
-
 .hero-banner-client-wrapper {
   display: block;
   width: 100%;
@@ -22,37 +11,32 @@
 .sz-banner-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   gap: 20px;
 }
 
-.sz-container {
-  width: calc(100% - 30px);
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 15px;
-}
+/* Use global container utility instead */
 
 .sz-banner-content {
   width: 100%;
   max-width: 670px;
+  padding: 100px 0;
+  position: relative;
 }
 
 .sz-main-banner-title {
   font-size: 68px;
-  letter-spacing: -2.108px;
+  letter-spacing: -1.2px;
   font-weight: 500;
   line-height: 78px;
   margin-bottom: 20px;
-  color: rgb(var(--color-primary-dark, 23, 8, 1));
+  color: rgb(var(--color-primary-dark));
 }
 
 .sz-main-banner-desc {
   font-size: 18px;
   line-height: 28px;
   margin-bottom: 40px;
-  color: rgb(var(--color-dark, 0, 53, 65));
+  color: rgb(var(--color-dark));
 }
 
 .sz-btn {
@@ -89,7 +73,19 @@
 
 .sz-banner-image-wrap {
   position: relative;
-  padding: 76px 0 46px 0;
+  display: flex;
+  position: relative;
+  padding: 76px 0 44px;
+}
+
+.sz-banner-image-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(var(--color-dark), 0.1);
 }
 
 .sz-banner-image-wrap img {
@@ -97,18 +93,9 @@
   height: auto;
 }
 
-.sz-banner-image-wrap::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 100%;
-  background-color: rgba(var(--color-dark, 0, 53, 65), 0.1);
-}
 
 .sz-banner-content-wrap {
-  border: 1px solid rgba(var(--color-dark, 0, 53, 65), 0.1);
+  border: 1px solid rgba(var(--color-dark), 0.1);
   width: 100%;
 }
 
@@ -201,6 +188,7 @@
 .sz-marquee-text {
   line-height: 24px;
   flex-shrink: 0;
+  color: rgb(var(--color-primary-dark));
 }
 
 @media (max-width: 1280px) {

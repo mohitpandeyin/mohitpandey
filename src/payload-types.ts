@@ -181,7 +181,6 @@ export interface Page {
         buttonLink?: string | null;
         bannerImage: string | Media;
         marqueeGroup?: {
-          marqueeText?: string | null;
           marqueeLogos?:
             | {
                 logo: string | Media;
@@ -370,7 +369,6 @@ export interface PagesSelect<T extends boolean = true> {
               marqueeGroup?:
                 | T
                 | {
-                    marqueeText?: T;
                     marqueeLogos?:
                       | T
                       | {

@@ -1,9 +1,114 @@
 :root {
-  --font-mono: 'Roboto Mono', monospace;
+  --color-primary-dark: 23, 8, 1;
+  --color-light: 243, 244, 246;
+  --color-white: 255, 255, 255;
+  --color-black: 0, 0, 0;
+  --color-secondary: 0, 156, 160;
+  --color-orange: 251, 133, 0;
+  --color-dark: 0, 53, 65;
+  --color-bg-light: 249, 251, 252;
+  --color-mid-black: 28, 17, 0;
+}
+
+/* Modern CSS Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 * {
-  box-sizing: border-box;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+a{
+    text-decoration: none;
+    display: inline-block;
+    color: rgb(var(--color-primary-dark));
+}
+/* Font imports - Add these at the very top of the file */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter-v18-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inter-v18-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter-v18-latin-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/inter-v18-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter-tight-v7-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inter-tight-v7-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter-tight-v7-latin-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/inter-tight-v7-latin-700.woff2') format('woff2');
 }
 
 html {
@@ -15,144 +120,68 @@ html {
 
 body {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 18px;
-  line-height: 32px;
-  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+
   margin: 0;
   background-color: #fafafa;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter Tight';
+}
 
-  @media (max-width: 1024px) {
-    font-size: 15px;
-    line-height: 24px;
+/* Accessibility & Focus States */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-h1 {
-  margin: 40px 0;
-  font-size: 64px;
-  line-height: 70px;
-  font-weight: bold;
-
-  @media (max-width: 1024px) {
-    margin: 24px 0;
-    font-size: 42px;
-    line-height: 42px;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 38px;
-    line-height: 38px;
-  }
-
-  @media (max-width: 400px) {
-    font-size: 32px;
-    line-height: 32px;
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary-dark: 0, 0, 0;
+    --color-light: 255, 255, 255;
+    --color-dark: 0, 0, 0;
   }
 }
 
-p {
-  margin: 24px 0;
-
-  @media (max-width: 1024px) {
-    margin: calc(var(--base) * 0.75) 0;
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-light: 17, 24, 39;
+    --color-white: 17, 24, 39;
+    --color-bg-light: 17, 24, 39;
+    --color-dark: 243, 244, 246;
+  }
+  
+  body {
+    background-color: rgb(var(--color-light));
+    color: rgb(var(--color-dark));
   }
 }
 
-a {
-  color: currentColor;
+/* Focus indicators */
+:focus-visible {
+  outline: 2px solid rgb(var(--color-primary-dark));
+  outline-offset: 2px;
+}
+
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: rgb(var(--color-primary-dark));
+  color: rgb(var(--color-white));
+  padding: 8px;
   text-decoration: none;
-
-  &:focus {
-    opacity: 0.8;
-    outline: none;
-  }
-
-  &:active {
-    opacity: 0.7;
-    outline: none;
-  }
+  z-index: 1000;
+  border-radius: 4px;
 }
 
-svg {
-  vertical-align: middle;
-}
-
-.home {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
-  padding: 45px;
-  max-width: 1024px;
-  margin: 0 auto;
-  overflow: hidden;
-
-  @media (max-width: 400px) {
-    padding: 24px;
-  }
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-
-    h1 {
-      text-align: center;
-    }
-  }
-
-  .links {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    a {
-      text-decoration: none;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-    }
-
-    .admin {
-      color: rgb(0, 0, 0);
-      background: rgb(1000, 1000, 1000);
-      border: 1px solid rgb(0, 0, 0);
-    }
-
-    .docs {
-      color: rgb(1000, 1000, 1000);
-      background: rgb(0, 0, 0);
-      border: 1px solid rgb(1000, 1000, 1000);
-    }
-  }
-
-  .footer {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    @media (max-width: 1024px) {
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    p {
-      margin: 0;
-    }
-
-    .codeLink {
-      text-decoration: none;
-      padding: 0 0.5rem;
-      background: rgb(60, 60, 60);
-      border-radius: 4px;
-    }
-  }
+.skip-to-content:focus {
+  top: 6px;
 }

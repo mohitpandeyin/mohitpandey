@@ -26,7 +26,6 @@ interface HeroBannerProps {
           }
         | MediaType
     }>
-    marqueeText?: string
   }
 }
 
@@ -47,7 +46,7 @@ export default function HeroBannerBlockServer({
 
   // Extract marquee data from the group
   const marqueeLogos = marqueeGroup?.marqueeLogos || []
-  const marqueeText = marqueeGroup?.marqueeText || ''
+  const marqueeText = 'Reporting Frameworks<br/> Adhere to global standards like'
 
   // Log for debugging
   console.log('HeroBanner props:', {
@@ -118,7 +117,9 @@ export default function HeroBannerBlockServer({
             </div>
           </div>
         </div>
-        {marqueeText && <p className="sz-marquee-text">{marqueeText}</p>}
+        {marqueeText && (
+          <p className="sz-marquee-text" dangerouslySetInnerHTML={{ __html: marqueeText }} />
+        )}
       </div>
     )
   }
