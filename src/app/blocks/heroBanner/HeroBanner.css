@@ -76,6 +76,7 @@
   display: flex;
   position: relative;
   padding: 76px 0 44px;
+  width: 100%;
 }
 
 .sz-banner-image-wrap::before {

@@ -1,23 +1,26 @@
 import React from 'react'
-import Image from 'next/image'
+import OptimizedImage from '@/components/OptimizedImage'
 import './Image.css'
+import { Media } from '@/payload-types'
 
-export default function ImageBlockServer({
-  image,
-}: {
-  image: { url: string; alt: string; caption?: string }
-}) {
+interface ImageProps {
+  image: Media | { url: string; alt: string; caption?: string; width?: number; height?: number }
+}
+
+export default function ImageBlockServer({ image }: ImageProps) {
+  // Handle both Media objects and plain objects
+  const caption = typeof image === 'object' && 'caption' in image ? image.caption : undefined
+
   return (
     <div className="imageContainer">
-      <Image
-        src={image.url}
-        alt={image.alt || ''}
-        width={1200}
-        height={800}
+      <OptimizedImage
+        media={image as Media}
+        size="desktop"
+        priority={false}
         className="image centered"
-        priority={true}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
       />
-      {image.caption && <p className="caption">{image.caption}</p>}
+      {caption && <p className="caption">{caption}</p>}
     </div>
   )
 }

@@ -38,9 +38,13 @@ export default function HeroBannerBlockServer({
   showMarquee,
   marqueeGroup,
 }: HeroBannerProps) {
-  // Handle banner image
+  // Handle banner image with optimization
   const imageUrl =
-    typeof bannerImage === 'object' && bannerImage?.url ? String(bannerImage.url) : ''
+    typeof bannerImage === 'object' && bannerImage?.url
+      ? process.env.R2_CDN_DOMAIN
+        ? String(bannerImage.url).replace(process.env.S3_ENDPOINT || '', process.env.R2_CDN_DOMAIN)
+        : String(bannerImage.url)
+      : ''
   const imageAlt =
     typeof bannerImage === 'object' && bannerImage?.alt ? String(bannerImage.alt) : ''
 
