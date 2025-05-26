@@ -8,15 +8,9 @@ export const HowSustainzoneWorksClient: React.FC<HowSustainzoneWorksProps> = ({
   title,
   buttonText,
   buttonLink,
-  step1Heading,
-  step1Point1,
-  step1Point2,
-  step2Heading,
-  step2Point1,
-  step2Point2,
-  step3Heading,
-  step3Point1,
-  step3Point2,
+  step1,
+  step2,
+  step3,
 }) => {
   const steps = [
     {
@@ -35,10 +29,10 @@ export const HowSustainzoneWorksClient: React.FC<HowSustainzoneWorksProps> = ({
           />
         </svg>
       ),
-      heading: step1Heading || 'Compliance & Carbon Footprint Assessment',
-      points: [
-        step1Point1 || 'Evaluate current ESG & sustainability practices',
-        step1Point2 || 'Identify compliance gaps in CSRD, SEC, or GHG Protocol',
+      heading: step1?.heading || 'Compliance & Carbon Footprint Assessment',
+      points: step1?.keyPoints?.map((item) => item.point) || [
+        'Evaluate current ESG & sustainability practices',
+        'Identify compliance gaps in CSRD, SEC, or GHG Protocol',
       ],
     },
     {
@@ -57,10 +51,10 @@ export const HowSustainzoneWorksClient: React.FC<HowSustainzoneWorksProps> = ({
           />
         </svg>
       ),
-      heading: step2Heading || 'Sustainability Strategy & Action Plan',
-      points: [
-        step2Point1 || 'Develop comprehensive sustainability roadmap',
-        step2Point2 || 'Set science-based targets and milestones',
+      heading: step2?.heading || 'Sustainability Strategy & Action Plan',
+      points: step2?.keyPoints?.map((item) => item.point) || [
+        'Develop comprehensive sustainability roadmap',
+        'Set science-based targets and milestones',
       ],
     },
     {
@@ -81,10 +75,10 @@ export const HowSustainzoneWorksClient: React.FC<HowSustainzoneWorksProps> = ({
           />
         </svg>
       ),
-      heading: step3Heading || 'Implementation & Continuous Monitoring',
-      points: [
-        step3Point1 || 'Deploy custom SaaS tools for tracking',
-        step3Point2 || 'Generate automated compliance reports',
+      heading: step3?.heading || 'Implementation & Continuous Monitoring',
+      points: step3?.keyPoints?.map((item) => item.point) || [
+        'Deploy custom SaaS tools for tracking',
+        'Generate automated compliance reports',
       ],
     },
   ]

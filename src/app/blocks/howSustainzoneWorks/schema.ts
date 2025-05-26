@@ -36,85 +36,124 @@ export const HowSustainzoneWorksBlock: Block = {
       },
     },
     {
-      name: 'step1Heading',
-      type: 'text',
-      required: true,
-      defaultValue: 'Compliance & Carbon Footprint Assessment',
+      name: 'step1',
+      type: 'group',
+      label: 'Step 1: Assessment',
       admin: {
-        description: 'Heading for Step 1',
+        description: 'Configuration for Step 1',
       },
+      fields: [
+        {
+          name: 'heading',
+          type: 'text',
+          required: true,
+          defaultValue: 'Compliance & Carbon Footprint Assessment',
+          admin: {
+            description: 'Heading for Step 1',
+          },
+        },
+        {
+          name: 'keyPoints',
+          type: 'array',
+          label: 'Key Points',
+          minRows: 1,
+          maxRows: 5,
+          admin: {
+            description: 'Key points for Step 1 (you can add multiple points)',
+          },
+          fields: [
+            {
+              name: 'point',
+              type: 'text',
+              required: true,
+            },
+          ],
+          defaultValue: [
+            { point: 'Evaluate current ESG & sustainability practices' },
+            { point: 'Identify compliance gaps in CSRD, SEC, or GHG Protocol' },
+          ],
+        },
+      ],
     },
     {
-      name: 'step1Point1',
-      type: 'text',
-      required: true,
-      defaultValue: 'Evaluate current ESG & sustainability practices',
+      name: 'step2',
+      type: 'group',
+      label: 'Step 2: Strategy',
       admin: {
-        description: 'First key point for Step 1',
+        description: 'Configuration for Step 2',
       },
+      fields: [
+        {
+          name: 'heading',
+          type: 'text',
+          required: true,
+          defaultValue: 'Sustainability Strategy & Action Plan',
+          admin: {
+            description: 'Heading for Step 2',
+          },
+        },
+        {
+          name: 'keyPoints',
+          type: 'array',
+          label: 'Key Points',
+          minRows: 1,
+          maxRows: 5,
+          admin: {
+            description: 'Key points for Step 2 (you can add multiple points)',
+          },
+          fields: [
+            {
+              name: 'point',
+              type: 'text',
+              required: true,
+            },
+          ],
+          defaultValue: [
+            { point: 'Develop comprehensive sustainability roadmap' },
+            { point: 'Set science-based targets and milestones' },
+          ],
+        },
+      ],
     },
     {
-      name: 'step1Point2',
-      type: 'text',
-      required: true,
-      defaultValue: 'Identify compliance gaps in CSRD, SEC, or GHG Protocol',
+      name: 'step3',
+      type: 'group',
+      label: 'Step 3: Implementation',
       admin: {
-        description: 'Second key point for Step 1',
+        description: 'Configuration for Step 3',
       },
-    },
-    {
-      name: 'step2Heading',
-      type: 'text',
-      required: true,
-      defaultValue: 'Sustainability Strategy & Action Plan',
-      admin: {
-        description: 'Heading for Step 2',
-      },
-    },
-    {
-      name: 'step2Point1',
-      type: 'text',
-      required: true,
-      defaultValue: 'Develop comprehensive sustainability roadmap',
-      admin: {
-        description: 'First key point for Step 2',
-      },
-    },
-    {
-      name: 'step2Point2',
-      type: 'text',
-      required: true,
-      defaultValue: 'Set science-based targets and milestones',
-      admin: {
-        description: 'Second key point for Step 2',
-      },
-    },
-    {
-      name: 'step3Heading',
-      type: 'text',
-      required: true,
-      defaultValue: 'Implementation & Continuous Monitoring',
-      admin: {
-        description: 'Heading for Step 3',
-      },
-    },
-    {
-      name: 'step3Point1',
-      type: 'text',
-      required: true,
-      defaultValue: 'Deploy custom SaaS tools for tracking',
-      admin: {
-        description: 'First key point for Step 3',
-      },
-    },
-    {
-      name: 'step3Point2',
-      type: 'text',
-      required: true,
-      defaultValue: 'Generate automated compliance reports',
-      admin: {
-        description: 'Second key point for Step 3',
-      },
+      fields: [
+        {
+          name: 'heading',
+          type: 'text',
+          required: true,
+          defaultValue: 'Implementation & Continuous Monitoring',
+          admin: {
+            description: 'Heading for Step 3',
+          },
+        },
+        {
+          name: 'keyPoints',
+          type: 'array',
+          label: 'Key Points',
+          minRows: 1,
+          maxRows: 5,
+          admin: {
+            description: 'Key points for Step 3 (you can add multiple points)',
+          },
+          fields: [
+            {
+              name: 'point',
+              type: 'text',
+              required: true,
+            },
+          ],
+          defaultValue: [
+            { point: 'Deploy custom SaaS tools for tracking' },
+            { point: 'Generate automated compliance reports' },
+          ],
+        },
+      ],
     },
   ],
 }

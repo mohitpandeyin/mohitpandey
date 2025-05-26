@@ -322,41 +322,59 @@ export interface HowSustainzoneWorksBlock {
    */
   buttonLink?: string | null;
   /**
-   * Heading for Step 1
+   * Configuration for Step 1
    */
-  step1Heading: string;
+  step1: {
+    /**
+     * Heading for Step 1
+     */
+    heading: string;
+    /**
+     * Key points for Step 1 (you can add multiple points)
+     */
+    keyPoints?:
+      | {
+          point: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
   /**
-   * First key point for Step 1
+   * Configuration for Step 2
    */
-  step1Point1: string;
+  step2: {
+    /**
+     * Heading for Step 2
+     */
+    heading: string;
+    /**
+     * Key points for Step 2 (you can add multiple points)
+     */
+    keyPoints?:
+      | {
+          point: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
   /**
-   * Second key point for Step 1
+   * Configuration for Step 3
    */
-  step1Point2: string;
-  /**
-   * Heading for Step 2
-   */
-  step2Heading: string;
-  /**
-   * First key point for Step 2
-   */
-  step2Point1: string;
-  /**
-   * Second key point for Step 2
-   */
-  step2Point2: string;
-  /**
-   * Heading for Step 3
-   */
-  step3Heading: string;
-  /**
-   * First key point for Step 3
-   */
-  step3Point1: string;
-  /**
-   * Second key point for Step 3
-   */
-  step3Point2: string;
+  step3: {
+    /**
+     * Heading for Step 3
+     */
+    heading: string;
+    /**
+     * Key points for Step 3 (you can add multiple points)
+     */
+    keyPoints?:
+      | {
+          point: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
   id?: string | null;
   blockName?: string | null;
   blockType: 'howSustainzoneWorks';
@@ -614,15 +632,39 @@ export interface HowSustainzoneWorksBlockSelect<T extends boolean = true> {
   title?: T;
   buttonText?: T;
   buttonLink?: T;
-  step1Heading?: T;
-  step1Point1?: T;
-  step1Point2?: T;
-  step2Heading?: T;
-  step2Point1?: T;
-  step2Point2?: T;
-  step3Heading?: T;
-  step3Point1?: T;
-  step3Point2?: T;
+  step1?:
+    | T
+    | {
+        heading?: T;
+        keyPoints?:
+          | T
+          | {
+              point?: T;
+              id?: T;
+            };
+      };
+  step2?:
+    | T
+    | {
+        heading?: T;
+        keyPoints?:
+          | T
+          | {
+              point?: T;
+              id?: T;
+            };
+      };
+  step3?:
+    | T
+    | {
+        heading?: T;
+        keyPoints?:
+          | T
+          | {
+              point?: T;
+              id?: T;
+            };
+      };
   id?: T;
   blockName?: T;
 }
