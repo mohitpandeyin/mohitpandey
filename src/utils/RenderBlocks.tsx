@@ -2,6 +2,7 @@ import CoverBlockServer from '@/app/blocks/cover/Server'
 import HeroBannerBlockServer from '@/app/blocks/heroBanner/Server'
 import HowWeSolveBlockServer from '@/app/blocks/howWeSolve/Server'
 import ServicesBlockServer from '@/app/blocks/services/Server'
+import WhySustainzoneBlockServer from '@/app/blocks/whySustainzone/Server'
 import ImageBlockServer from '@/app/blocks/image/Server'
 import RichTextBlockServer from '@/app/blocks/richtext/Server'
 import { Page } from '@/payload-types'
@@ -12,6 +13,7 @@ const blockComponents = {
   heroBanner: HeroBannerBlockServer,
   howWeSolve: HowWeSolveBlockServer,
   services: ServicesBlockServer,
+  whySustainzone: WhySustainzoneBlockServer,
   image: ImageBlockServer,
   richtext: RichTextBlockServer,
 }

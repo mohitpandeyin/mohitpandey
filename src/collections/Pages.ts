@@ -2,6 +2,7 @@ import { Cover } from '@/app/blocks/cover/schema'
 import { HeroBanner } from '@/app/blocks/heroBanner/schema'
 import { HowWeSolve } from '@/app/blocks/howWeSolve/schema'
 import { Services } from '@/app/blocks/services/schema'
+import { WhySustainzone } from '@/app/blocks/whySustainzone/schema'
 import { Image } from '@/app/blocks/image/schema'
 import { RichText } from '@/app/blocks/richtext/schema'
 
@@ -29,7 +30,7 @@ export const Pages: CollectionConfig = {
       name: 'layout',
       label: 'Layout',
       type: 'blocks',
-      blocks: [Cover, HeroBanner, HowWeSolve, Services, Image, RichText],
+      blocks: [Cover, HeroBanner, HowWeSolve, Services, WhySustainzone, Image, RichText],
       required: true,
     },
   ],

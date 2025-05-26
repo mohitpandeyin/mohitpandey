@@ -263,6 +263,17 @@ export interface Page {
         blockType: 'services';
       }
     | {
+        title: string;
+        expertiseDescription: string;
+        technologyDescription: string;
+        complianceDescription: string;
+        supportDescription: string;
+        integrationsDescription: string;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'whySustainzone';
+      }
+    | {
         image: string | Media;
         id?: string | null;
         blockName?: string | null;
@@ -503,6 +514,18 @@ export interface PagesSelect<T extends boolean = true> {
                     buttonLink?: T;
                     id?: T;
                   };
+              id?: T;
+              blockName?: T;
+            };
+        whySustainzone?:
+          | T
+          | {
+              title?: T;
+              expertiseDescription?: T;
+              technologyDescription?: T;
+              complianceDescription?: T;
+              supportDescription?: T;
+              integrationsDescription?: T;
               id?: T;
               blockName?: T;
             };
