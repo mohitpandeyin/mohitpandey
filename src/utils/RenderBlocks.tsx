@@ -1,5 +1,6 @@
 import CoverBlockServer from '@/app/blocks/cover/Server'
 import HeroBannerBlockServer from '@/app/blocks/heroBanner/Server'
+import HowSustainzoneWorksBlockServer from '@/app/blocks/howSustainzoneWorks/Server'
 import HowWeSolveBlockServer from '@/app/blocks/howWeSolve/Server'
 import ServicesBlockServer from '@/app/blocks/services/Server'
 import WhySustainzoneBlockServer from '@/app/blocks/whySustainzone/Server'
@@ -11,6 +12,7 @@ import React, { Fragment } from 'react'
 const blockComponents = {
   cover: CoverBlockServer,
   heroBanner: HeroBannerBlockServer,
+  howSustainzoneWorks: HowSustainzoneWorksBlockServer,
   howWeSolve: HowWeSolveBlockServer,
   services: ServicesBlockServer,
   whySustainzone: WhySustainzoneBlockServer,

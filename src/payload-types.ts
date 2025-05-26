@@ -226,6 +226,7 @@ export interface Page {
         blockName?: string | null;
         blockType: 'heroBanner';
       }
+    | HowSustainzoneWorksBlock
     | {
         title: string;
         customerServiceDesc: string;
@@ -302,6 +303,63 @@ export interface Page {
   )[];
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HowSustainzoneWorksBlock".
+ */
+export interface HowSustainzoneWorksBlock {
+  /**
+   * Main heading for the section
+   */
+  title: string;
+  /**
+   * Text for the call-to-action button
+   */
+  buttonText?: string | null;
+  /**
+   * URL for the call-to-action button
+   */
+  buttonLink?: string | null;
+  /**
+   * Heading for Step 1
+   */
+  step1Heading: string;
+  /**
+   * First key point for Step 1
+   */
+  step1Point1: string;
+  /**
+   * Second key point for Step 1
+   */
+  step1Point2: string;
+  /**
+   * Heading for Step 2
+   */
+  step2Heading: string;
+  /**
+   * First key point for Step 2
+   */
+  step2Point1: string;
+  /**
+   * Second key point for Step 2
+   */
+  step2Point2: string;
+  /**
+   * Heading for Step 3
+   */
+  step3Heading: string;
+  /**
+   * First key point for Step 3
+   */
+  step3Point1: string;
+  /**
+   * Second key point for Step 3
+   */
+  step3Point2: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'howSustainzoneWorks';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -482,6 +540,7 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        howSustainzoneWorks?: T | HowSustainzoneWorksBlockSelect<T>;
         howWeSolve?:
           | T
           | {
@@ -546,6 +605,26 @@ export interface PagesSelect<T extends boolean = true> {
       };
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HowSustainzoneWorksBlock_select".
+ */
+export interface HowSustainzoneWorksBlockSelect<T extends boolean = true> {
+  title?: T;
+  buttonText?: T;
+  buttonLink?: T;
+  step1Heading?: T;
+  step1Point1?: T;
+  step1Point2?: T;
+  step2Heading?: T;
+  step2Point1?: T;
+  step2Point2?: T;
+  step3Heading?: T;
+  step3Point1?: T;
+  step3Point2?: T;
+  id?: T;
+  blockName?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

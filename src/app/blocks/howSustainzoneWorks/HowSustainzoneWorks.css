@@ -1,0 +1,199 @@
+/* How SustainZone Works Section */
+.sz-work-section {
+  background-color: rgb(var(--color-bg-light));
+  padding: 100px 20px;
+}
+
+.sz-work-container {
+  max-width: 1230px;
+  margin: 0 auto;
+  display: flex;
+  gap: 80px;
+  justify-content: space-between;
+}
+
+.sz-work-content-wrap {
+  flex: 1;
+  width: 350px;
+}
+
+.sz-work-title {
+  font-size: 44px;
+  color: rgb(var(--color-primary-dark));
+  line-height: 58px;
+  font-weight: 500;
+  letter-spacing: -0.88px;
+  margin: 0 0 40px 0;
+}
+
+.sz-work-steps-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sz-work-step {
+  background: rgb(var(--color-white));
+  border-radius: 10px;
+  padding: 40px 30px;
+  position: relative;
+}
+
+.sz-step-count {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(var(--color-secondary));
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.sz-step-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.sz-step-head svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.sz-work-step-heading {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 600;
+  margin: 0;
+  color: rgb(var(--color-primary-dark));
+}
+
+.sz-steps-keypoint-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sz-steps-keypoint {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.sz-steps-keypoint svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sz-step-keypoint-text {
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(var(--color-primary-dark), 0.8);
+  margin: 0;
+}
+
+.sz-arrow-right {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sz-work-container {
+    gap: 60px;
+  }
+  
+  .sz-work-content-wrap {
+    width: 300px;
+  }
+  
+  .sz-work-step {
+    padding: 30px 24px;
+  }
+  
+  .sz-work-title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sz-work-section {
+    padding: 80px 20px;
+  }
+  
+  .sz-work-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .sz-work-content-wrap {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .sz-work-title {
+    font-size: 32px;
+    line-height: 42px;
+    letter-spacing: -0.64px;
+    margin-bottom: 32px;
+  }
+  
+  .sz-work-steps-wrap {
+    gap: 24px;
+  }
+  
+  .sz-work-step {
+    padding: 30px 20px;
+  }
+  
+  .sz-work-step-heading {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  
+  .sz-step-keypoint-text {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sz-work-section {
+    padding: 60px 16px;
+  }
+  
+  .sz-work-title {
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 24px;
+  }
+  
+  .sz-work-step {
+    padding: 24px 16px;
+  }
+  
+  .sz-step-head {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .sz-step-head svg {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .sz-work-step-heading {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  
+  .sz-steps-keypoint svg {
+    width: 18px;
+    height: 18px;
+  }
+}
