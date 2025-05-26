@@ -237,6 +237,32 @@ export interface Page {
         blockType: 'howWeSolve';
       }
     | {
+        title: string;
+        services?:
+          | {
+              /**
+               * SVG icon for the service (optional)
+               */
+              icon?: (string | null) | Media;
+              category: string;
+              title: string;
+              description: string;
+              features?:
+                | {
+                    feature: string;
+                    id?: string | null;
+                  }[]
+                | null;
+              buttonText?: string | null;
+              buttonLink?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'services';
+      }
+    | {
         image: string | Media;
         id?: string | null;
         blockName?: string | null;
@@ -453,6 +479,30 @@ export interface PagesSelect<T extends boolean = true> {
               costDesc?: T;
               emissionsDesc?: T;
               reportingDesc?: T;
+              id?: T;
+              blockName?: T;
+            };
+        services?:
+          | T
+          | {
+              title?: T;
+              services?:
+                | T
+                | {
+                    icon?: T;
+                    category?: T;
+                    title?: T;
+                    description?: T;
+                    features?:
+                      | T
+                      | {
+                          feature?: T;
+                          id?: T;
+                        };
+                    buttonText?: T;
+                    buttonLink?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };

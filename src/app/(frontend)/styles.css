@@ -257,3 +257,225 @@ h1, h2, h3, h4, h5, h6 {
 .sz-faster-reporting{
     gap: 238px;
 }
+
+/* Services Section Styles */
+.sz-services-section {
+  background: linear-gradient(to top, #FFFFFF 0%, #F3F5F6 19%, #F3F5F6 100%);
+}
+
+.sz-service-title {
+  font-size: 44px;
+  line-height: 56px;
+  font-weight: 500;
+  max-width: 782px;
+  letter-spacing: -0.88px;
+  color: rgb(var(--color-mid-black));
+}
+
+.sz-section-title-wrap {
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.sz-slider-nav {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.sz-slider-btn {
+  padding: 10px 24px;
+  background-color: rgb(var(--color-primary-dark));
+  border-radius: 100px;
+  position: static;
+  width: 68px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.sz-slider-btn svg {
+  flex-shrink: 0;
+  height: 18px;
+  color: rgb(var(--color-white));
+}
+
+.sz-slider-btn:hover {
+  background-color: rgb(var(--color-secondary));
+}
+
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+  display: none;
+}
+
+.swiper-button-prev.swiper-button-disabled, 
+.swiper-button-next.swiper-button-disabled {
+  opacity: 100%;
+  background-color: rgb(var(--color-white));
+}
+
+.swiper-button-prev.swiper-button-disabled svg, 
+.swiper-button-next.swiper-button-disabled svg {
+  color: rgb(var(--color-primary-dark));
+}
+
+.swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.sz-service-card-wrap {
+  background-color: rgb(var(--color-white));
+  border-radius: 4px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sz-service-card-wrap:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.sz-service-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 32px;
+  border-radius: 4px 4px 0 0;
+  background-color: rgb(var(--color-bg-light));
+  border-bottom: 1px solid rgb(var(--color-light));
+}
+
+.sz-service-head-title {
+  line-height: 24px;
+  font-weight: 600;
+  color: rgb(var(--color-secondary));
+  margin: 0;
+}
+
+.sz-service-card-content {
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.sz-service-card-title {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: -0.64px;
+  color: rgb(var(--color-mid-black));
+  margin-bottom: 16px;
+}
+
+.sz-service-card-desc {
+  font-size: 18px;
+  line-height: 28px;
+  color: rgb(var(--color-mid-black));
+  margin-bottom: 24px;
+}
+
+.sz-services-points-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.sz-services-keypoint {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.sz-service-keypoint-text {
+  font-size: 18px;
+  line-height: 28px;
+  color: rgb(var(--color-mid-black));
+  margin: 0;
+}
+
+.sz-service-card-inner {
+  flex: 1;
+}
+
+.sz-button-secondary {
+  border: 1px solid rgb(var(--color-primary-dark));
+  padding: 12px 32px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+  background-color: rgb(var(--color-white));
+  color: rgb(var(--color-primary-dark));
+  text-decoration: none;
+  display: inline-block;
+  margin-top: auto;
+}
+
+.sz-button-secondary:hover {
+  background-color: rgb(var(--color-primary-dark));
+  color: rgb(var(--color-white));
+}
+
+/* Responsive Design for Services */
+@media (max-width: 1024px) {
+  .sz-section-title-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  
+  .sz-service-title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sz-services-section {
+    padding: 60px 0;
+  }
+  
+  .sz-section-title-wrap {
+    margin-bottom: 40px;
+  }
+  
+  .sz-service-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  
+  .sz-service-card-header,
+  .sz-service-card-content {
+    padding: 16px 24px;
+  }
+  
+  .sz-service-card-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  
+  .sz-service-card-desc,
+  .sz-service-keypoint-text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
