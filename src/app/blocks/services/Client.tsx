@@ -8,6 +8,7 @@ import OptimizedImage from '@/components/OptimizedImage'
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/navigation'
+import './Services.css'
 
 export const ServicesClient: React.FC<ServicesProps> = ({ title, services }) => {
   const checkIcon = (

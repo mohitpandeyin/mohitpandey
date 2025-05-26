@@ -1,3 +1,4 @@
+
 /* Services Section Styles */
 .sz-services-section {
   background: linear-gradient(to top, #FFFFFF 0%, #F3F5F6 19%, #F3F5F6 100%);
@@ -18,6 +19,14 @@
   justify-content: space-between;
   align-items: flex-end;
   gap: 20px;
+}
+
+.sz-services-swiper.swiper{
+  padding-bottom: 4px;
+}
+
+.sz-services-swiper .swiper-slide{
+    height: auto;
 }
 
 .sz-slider-nav {
@@ -82,11 +91,6 @@
   flex-direction: column;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-}
-
-.sz-service-card-wrap:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
 }
 
 .sz-service-card-header {
@@ -175,7 +179,7 @@
   color: rgb(var(--color-white));
 }
 
-/* Responsive Design */
+/* Responsive Design for Services */
 @media (max-width: 1024px) {
   .sz-section-title-wrap {
     flex-direction: column;
