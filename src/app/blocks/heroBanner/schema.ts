@@ -77,11 +77,11 @@ export const HeroBanner: Block = {
         {
           name: 'marqueeGroup',
           type: 'group',
-          label: 'Reporting Frameworks',
+          label: 'Reporting Frameworks Logo',
           fields: [
             {
               name: 'marqueeLogos',
-              label: 'RF Logos',
+              label: '',
               type: 'array',
               minRows: 1,
               labels: {

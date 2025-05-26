@@ -84,45 +84,93 @@ export default function HeroBannerBlockServer({
     </svg>
   )
 
-  // Prepare marquee items
+  // Prepare marquee items for Swiper
   const renderMarqueeItems = () => {
-    if (!showMarquee || !marqueeLogos || marqueeLogos.length === 0) return null
+    if (!showMarquee || !marqueeLogos || marqueeLogos.length === 0) {
+      console.log('Marquee not shown:', {
+        showMarquee,
+        hasMarqueeLogos: !!marqueeLogos,
+        logoCount: marqueeLogos?.length,
+      })
 
-    // Create two identical sets of logos for infinite scrolling
-    return (
-      <div className="sz-marquee-wrapper sz-container">
-        <div className="sz-marquee-section">
-          <div className="sz-marquee-content-wrap">
-            <div className="sz-marquee-content marquee">
-              {marqueeLogos.map((item, index) => {
-                const logo = item?.logo || {}
-                const logoUrl = typeof logo === 'object' && 'url' in logo ? String(logo.url) : ''
-                const logoAlt = typeof logo === 'object' && 'alt' in logo ? String(logo.alt) : ''
+      // Add some test slides for development if no logos are provided
+      if (showMarquee) {
+        const testSlides = []
+        for (let i = 0; i < 10; i++) {
+          testSlides.push(
+            <div key={`test-slide-${i}`} className="swiper-slide sz-marquee-item">
+              <div
+                style={{
+                  width: '120px',
+                  height: '60px',
+                  backgroundColor: '#f0f0f0',
+                  border: '1px solid #ddd',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderRadius: '4px',
+                }}
+              >
+                Logo {i + 1}
+              </div>
+            </div>,
+          )
+        }
 
-                return (
-                  <div key={`logo-orig-${index}`} className="sz-marquee-item">
-                    <img src={logoUrl} alt={logoAlt} className="sz-marquee-img" />
-                  </div>
-                )
-              })}
+        console.log('Using test slides:', testSlides.length)
+
+        return (
+          <div className="sz-marquee-section sz-container">
+            <div className="swiper sz-marquee-swiper">
+              <div className="swiper-wrapper sz-marquee-content">{testSlides}</div>
             </div>
-            <div className="sz-marquee-content marquee">
-              {marqueeLogos.map((item, index) => {
-                const logo = item?.logo || {}
-                const logoUrl = typeof logo === 'object' && 'url' in logo ? String(logo.url) : ''
-                const logoAlt = typeof logo === 'object' && 'alt' in logo ? String(logo.alt) : ''
-
-                return (
-                  <div key={`logo-dup-${index}`} className="sz-marquee-item">
-                    <img src={logoUrl} alt={logoAlt} className="sz-marquee-img" />
-                  </div>
-                )
-              })}
-            </div>
+            {marqueeText && (
+              <p
+                className="sz-marquee-title"
+                dangerouslySetInnerHTML={{ __html: marqueeText.replace('<br/>', '<br>') }}
+              />
+            )}
           </div>
+        )
+      }
+
+      return null
+    }
+
+    // Create marquee items for Swiper
+    const marqueeItems: React.ReactElement[] = []
+
+    // Create enough slides for smooth infinite scroll (duplicate the logos multiple times)
+    for (let i = 0; i < 5; i++) {
+      // Increased from 3 to 5 for more slides
+      marqueeLogos.forEach((item, index) => {
+        const logo = item?.logo || {}
+        const logoUrl = typeof logo === 'object' && 'url' in logo ? String(logo.url) : ''
+        const logoAlt = typeof logo === 'object' && 'alt' in logo ? String(logo.alt) : ''
+
+        if (logoUrl) {
+          // Only add slides with valid URLs
+          marqueeItems.push(
+            <div key={`swiper-slide-${i}-${index}`} className="swiper-slide sz-marquee-item">
+              <img src={logoUrl} alt={logoAlt} className="sz-marquee-img" draggable="false" />
+            </div>,
+          )
+        }
+      })
+    }
+
+    console.log('Generated marquee items:', marqueeItems.length)
+
+    return (
+      <div className="sz-marquee-section sz-container">
+        <div className="swiper sz-marquee-swiper">
+          <div className="swiper-wrapper sz-marquee-content">{marqueeItems}</div>
         </div>
         {marqueeText && (
-          <p className="sz-marquee-text" dangerouslySetInnerHTML={{ __html: marqueeText }} />
+          <p
+            className="sz-marquee-title"
+            dangerouslySetInnerHTML={{ __html: marqueeText.replace('<br/>', '<br>') }}
+          />
         )}
       </div>
     )
