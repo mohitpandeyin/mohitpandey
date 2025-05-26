@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { HowWeSolveProps } from './types'
+import './HowWeSolve.css'
 
 export const HowWeSolve: React.FC<HowWeSolveProps> = ({
   title,

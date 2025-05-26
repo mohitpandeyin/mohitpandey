@@ -69,7 +69,7 @@
 }
 
 .footer-menu a:hover {
-  color: #0070f3;
+  color: rgba(var(--color-orange))
 }
 
 .footer-contact {
