@@ -39,38 +39,6 @@
   color: rgb(var(--color-dark));
 }
 
-.sz-btn {
-  border-radius: 60px;
-  font-weight: 600;
-  line-height: 26px;
-  display: inline-flex;
-  padding: 8px 8px 8px 24px;
-  gap: 6px;
-  align-items: center;
-  transition: .3s all;
-  text-decoration: none;
-}
-
-.sz-button-primary {
-  background-color: rgb(var(--color-primary-dark, 23, 8, 1));
-  color: rgb(var(--color-white, 255, 255, 255));
-}
-
-.sz-button-icon-wrap {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 30px;
-  transition: .3s all;
-}
-
-.sz-button-primary:hover .sz-button-icon-wrap {
-  background-color: rgba(var(--color-white, 255, 255, 255), 0.2);
-  transform: rotate(-45deg);
-}
-
 .sz-banner-image-wrap {
   display: flex;
   position: relative;

@@ -2,6 +2,7 @@ import React from 'react'
 import './HeroBanner.css'
 import { Media as MediaType } from '@/payload-types'
 import HeroBannerClient from './Client'
+import { Button } from '@/components/ui'
 
 interface HeroBannerProps {
   title: string
@@ -63,26 +64,6 @@ export default function HeroBannerBlockServer({
       return typeof logo === 'object' && 'url' in logo ? String(logo.url) : 'No URL'
     }),
   })
-
-  // Create the arrow SVG component
-  const ArrowRight = () => (
-    <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M1.125 7H14.875"
-        stroke="white"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M9.25 1.375L14.875 7L9.25 12.625"
-        stroke="white"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
 
   // Prepare marquee items for Swiper
   const renderMarqueeItems = () => {
@@ -186,14 +167,7 @@ export default function HeroBannerBlockServer({
                 <h1 className="sz-main-banner-title">{title}</h1>
                 <p className="sz-main-banner-desc">{description}</p>
                 {buttonText && buttonLink && (
-                  <a href={buttonLink} className="sz-btn sz-button-primary">
-                    <div className="sz-button-wrap">
-                      <span>{buttonText}</span>
-                    </div>
-                    <div className="sz-button-icon-wrap">
-                      <ArrowRight />
-                    </div>
-                  </a>
+                  <Button text={buttonText} href={buttonLink} variant="primary" />
                 )}
               </div>
               <div className="sz-banner-image-wrap">

@@ -15,44 +15,39 @@ export const WhySustainzone: Block = {
       defaultValue: 'Why Choose SustainZone',
     },
     {
-      name: 'expertiseDescription',
-      label: 'Expertise & Experience Description',
+      name: 'lcaDescription',
+      label: 'Life Cycle Assessment (LCA) & Digital Product Passport Description',
       type: 'textarea',
       required: true,
-      defaultValue:
-        'Our team of ESG experts and sustainability professionals brings years of experience in compliance, carbon accounting, and environmental reporting.',
+      defaultValue: 'Track product emissions across the value chain.',
     },
     {
-      name: 'technologyDescription',
-      label: 'Advanced Technology Description',
+      name: 'sbtiDescription',
+      label: 'Science-Based Targets (SBTi) Alignment Description',
       type: 'textarea',
       required: true,
-      defaultValue:
-        'Leverage cutting-edge AI and machine learning tools to automate data collection, analysis, and reporting for maximum accuracy and efficiency.',
+      defaultValue: 'We help businesses define & meet their sustainability goals.',
     },
     {
-      name: 'complianceDescription',
-      label: 'Comprehensive Compliance Description',
+      name: 'saasToolsDescription',
+      label: 'Custom SaaS Tools Description',
       type: 'textarea',
       required: true,
-      defaultValue:
-        'Stay ahead of evolving regulations with our comprehensive coverage of CSRD, SEC Climate Disclosure, GHG Protocol, and other frameworks.',
+      defaultValue: 'Automate ESG reporting, compliance, and carbon footprint calculations.',
     },
     {
-      name: 'supportDescription',
-      label: 'Dedicated Support Description',
+      name: 'carbonAccountingDescription',
+      label: 'Complex Carbon Accounting Description',
       type: 'textarea',
       required: true,
-      defaultValue:
-        'Get personalized guidance from our sustainability experts throughout your compliance journey with 24/7 support and consultation.',
+      defaultValue: 'Granular Scope 1, 2 & 3 tracking for accurate emissions reporting.',
     },
     {
-      name: 'integrationsDescription',
-      label: 'Seamless Integrations Description',
+      name: 'supplyChainDescription',
+      label: 'Supply Chain ESG Assessments Description',
       type: 'textarea',
       required: true,
-      defaultValue:
-        'Connect with your existing systems and data sources through our robust API and pre-built integrations with popular business tools.',
+      defaultValue: 'Measure supplier sustainability & drive compliance.',
     },
   ],
 }

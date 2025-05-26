@@ -264,11 +264,11 @@ export interface Page {
       }
     | {
         title: string;
-        expertiseDescription: string;
-        technologyDescription: string;
-        complianceDescription: string;
-        supportDescription: string;
-        integrationsDescription: string;
+        lcaDescription: string;
+        sbtiDescription: string;
+        saasToolsDescription: string;
+        carbonAccountingDescription: string;
+        supplyChainDescription: string;
         id?: string | null;
         blockName?: string | null;
         blockType: 'whySustainzone';
@@ -521,11 +521,11 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               title?: T;
-              expertiseDescription?: T;
-              technologyDescription?: T;
-              complianceDescription?: T;
-              supportDescription?: T;
-              integrationsDescription?: T;
+              lcaDescription?: T;
+              sbtiDescription?: T;
+              saasToolsDescription?: T;
+              carbonAccountingDescription?: T;
+              supplyChainDescription?: T;
               id?: T;
               blockName?: T;
             };

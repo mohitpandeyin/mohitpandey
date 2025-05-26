@@ -11,6 +11,10 @@
 }
 
 /* Spacing Utilities */
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 .sz-mt-0 { margin-top: 0; }
 .sz-mt-1 { margin-top: 0.25rem; }
 .sz-mt-2 { margin-top: 0.5rem; }
@@ -132,46 +136,50 @@
   .xl\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .xl\:text-center { text-align: center; }
 }
+
 /* Button Utilities */
 .sz-btn {
+  border-radius: 60px;
+  font-weight: 600;
+  line-height: 26px;
   display: inline-flex;
+  padding: 8px 8px 8px 24px;
+  gap: 6px;
   align-items: center;
-  justify-content: center;
-  border-radius: 0.375rem;
-  font-weight: 500;
+  transition: .3s all;
   text-decoration: none;
-  transition: all 0.15s ease-in-out;
-  cursor: pointer;
   border: none;
-  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
-.sz-btn-primary {
-  background-color: rgb(var(--color-primary-dark));
-  color: rgb(var(--color-white));
+.sz-button-primary {
+  background-color: rgb(var(--color-primary-dark, 23, 8, 1));
+  color: rgb(var(--color-white, 255, 255, 255));
 }
 
-.sz-btn-primary:hover {
-  background-color: rgb(var(--color-primary-dark) / 0.9);
+.sz-button-white {
+  background-color: rgb(var(--color-white, 255, 255, 255));
+  color: rgb(var(--color-primary-dark, 23, 8, 1));
 }
 
-.sz-btn-secondary {
-  background-color: rgb(var(--color-secondary));
-  color: rgb(var(--color-white));
+.sz-button-icon-wrap {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  transition: .3s all;
 }
 
-.sz-btn-secondary:hover {
-  background-color: rgb(var(--color-secondary) / 0.9);
+.sz-button-primary:hover .sz-button-icon-wrap {
+  background-color: rgba(var(--color-white, 255, 255, 255), 0.2);
+  transform: rotate(-45deg);
 }
 
-.sz-btn-sm {
-  padding: 0.25rem 0.75rem;
-  font-size: 0.875rem;
-}
-
-.sz-btn-lg {
-  padding: 0.75rem 1.5rem;
-  font-size: 1.125rem;
+.sz-button-white:hover .sz-button-icon-wrap {
+  background-color: rgba(var(--color-primary-dark, 23, 8, 1), 0.1);
+  transform: rotate(-45deg);
 }
 
 /* Accessibility */

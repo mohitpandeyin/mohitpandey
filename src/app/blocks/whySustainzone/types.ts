@@ -1,8 +1,8 @@
 export type WhySustainzoneProps = {
   title?: string
-  expertiseDescription?: string
-  technologyDescription?: string
-  complianceDescription?: string
-  supportDescription?: string
-  integrationsDescription?: string
+  lcaDescription?: string
+  sbtiDescription?: string
+  saasToolsDescription?: string
+  carbonAccountingDescription?: string
+  supplyChainDescription?: string
 }
