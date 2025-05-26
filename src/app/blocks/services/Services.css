@@ -157,6 +157,7 @@
 
 .sz-service-card-inner {
   flex: 1;
+  margin-bottom: 24px;
 }
 
 .sz-button-secondary {

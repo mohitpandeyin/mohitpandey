@@ -116,6 +116,19 @@ export const Services: Block = {
           buttonText: 'See how it works',
           buttonLink: '#',
         },
+        {
+          category: 'Science-Based Targets (SBTi) Alignment',
+          title: 'Develop & Achieve SBTi-Aligned Net-Zero Strategies',
+          description:
+            'We help businesses define, validate, and execute Science-Based Targets (SBTi), ensuring a clear pathway to net-zero emissions and alignment with the Paris Agreement.',
+          features: [
+            { feature: 'Set corporate climate goals backed by science' },
+            { feature: 'Get expert guidance for SBTi validation' },
+            { feature: 'Develop long-term decarbonization strategies' },
+          ],
+          buttonText: 'See how it works',
+          buttonLink: '#',
+        },
       ],
     },
   ],
