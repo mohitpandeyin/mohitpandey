@@ -263,6 +263,7 @@ export interface Page {
         blockName?: string | null;
         blockType: 'services';
       }
+    | TestimonialsBlock
     | {
         title: string;
         lcaDescription: string;
@@ -378,6 +379,31 @@ export interface HowSustainzoneWorksBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'howSustainzoneWorks';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TestimonialsBlock".
+ */
+export interface TestimonialsBlock {
+  /**
+   * Main heading for the testimonials section
+   */
+  title: string;
+  testimonials?:
+    | {
+        quote: string;
+        authorName: string;
+        companyName?: string | null;
+        image?: (string | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  showNavigationButtons?: boolean | null;
+  autoplay?: boolean | null;
+  autoplayDelay?: number | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'testimonials';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -594,6 +620,7 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        testimonials?: T | TestimonialsBlockSelect<T>;
         whySustainzone?:
           | T
           | {
@@ -665,6 +692,27 @@ export interface HowSustainzoneWorksBlockSelect<T extends boolean = true> {
               id?: T;
             };
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TestimonialsBlock_select".
+ */
+export interface TestimonialsBlockSelect<T extends boolean = true> {
+  title?: T;
+  testimonials?:
+    | T
+    | {
+        quote?: T;
+        authorName?: T;
+        companyName?: T;
+        image?: T;
+        id?: T;
+      };
+  showNavigationButtons?: T;
+  autoplay?: T;
+  autoplayDelay?: T;
   id?: T;
   blockName?: T;
 }

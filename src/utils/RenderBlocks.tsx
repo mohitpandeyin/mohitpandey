@@ -3,6 +3,7 @@ import HeroBannerBlockServer from '@/app/blocks/heroBanner/Server'
 import HowSustainzoneWorksBlockServer from '@/app/blocks/howSustainzoneWorks/Server'
 import HowWeSolveBlockServer from '@/app/blocks/howWeSolve/Server'
 import ServicesBlockServer from '@/app/blocks/services/Server'
+import TestimonialsBlockServer from '@/app/blocks/testimonials/Server'
 import WhySustainzoneBlockServer from '@/app/blocks/whySustainzone/Server'
 import ImageBlockServer from '@/app/blocks/image/Server'
 import RichTextBlockServer from '@/app/blocks/richtext/Server'
@@ -15,6 +16,7 @@ const blockComponents = {
   howSustainzoneWorks: HowSustainzoneWorksBlockServer,
   howWeSolve: HowWeSolveBlockServer,
   services: ServicesBlockServer,
+  testimonials: TestimonialsBlockServer,
   whySustainzone: WhySustainzoneBlockServer,
   image: ImageBlockServer,
   richtext: RichTextBlockServer,
