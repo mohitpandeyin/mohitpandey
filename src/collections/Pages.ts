@@ -4,6 +4,7 @@ import { HowSustainzoneWorksBlock } from '@/app/blocks/howSustainzoneWorks/schem
 import { HowWeSolve } from '@/app/blocks/howWeSolve/schema'
 import { Services } from '@/app/blocks/services/schema'
 import { TestimonialsBlock } from '@/app/blocks/testimonials/schema'
+import { FAQBlock } from '@/app/blocks/faq/schema'
 import { WhySustainzone } from '@/app/blocks/whySustainzone/schema'
 import { Image } from '@/app/blocks/image/schema'
 import { RichText } from '@/app/blocks/richtext/schema'
@@ -39,6 +40,7 @@ export const Pages: CollectionConfig = {
         HowWeSolve,
         Services,
         TestimonialsBlock,
+        FAQBlock,
         WhySustainzone,
         Image,
         RichText,

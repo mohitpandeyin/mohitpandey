@@ -4,6 +4,7 @@ import HowSustainzoneWorksBlockServer from '@/app/blocks/howSustainzoneWorks/Ser
 import HowWeSolveBlockServer from '@/app/blocks/howWeSolve/Server'
 import ServicesBlockServer from '@/app/blocks/services/Server'
 import TestimonialsBlockServer from '@/app/blocks/testimonials/Server'
+import FAQBlockServer from '@/app/blocks/faq/Server'
 import WhySustainzoneBlockServer from '@/app/blocks/whySustainzone/Server'
 import ImageBlockServer from '@/app/blocks/image/Server'
 import RichTextBlockServer from '@/app/blocks/richtext/Server'
@@ -17,6 +18,7 @@ const blockComponents = {
   howWeSolve: HowWeSolveBlockServer,
   services: ServicesBlockServer,
   testimonials: TestimonialsBlockServer,
+  faq: FAQBlockServer,
   whySustainzone: WhySustainzoneBlockServer,
   image: ImageBlockServer,
   richtext: RichTextBlockServer,

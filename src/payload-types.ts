@@ -264,6 +264,7 @@ export interface Page {
         blockType: 'services';
       }
     | TestimonialsBlock
+    | FAQBlock
     | {
         title: string;
         lcaDescription: string;
@@ -404,6 +405,28 @@ export interface TestimonialsBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'testimonials';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FAQBlock".
+ */
+export interface FAQBlock {
+  title: string;
+  subtitle?: string | null;
+  faqs?:
+    | {
+        question: string;
+        answer: string;
+        /**
+         * Check this to have the FAQ item expanded by default
+         */
+        isExpanded?: boolean | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'faq';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -621,6 +644,7 @@ export interface PagesSelect<T extends boolean = true> {
               blockName?: T;
             };
         testimonials?: T | TestimonialsBlockSelect<T>;
+        faq?: T | FAQBlockSelect<T>;
         whySustainzone?:
           | T
           | {
@@ -713,6 +737,24 @@ export interface TestimonialsBlockSelect<T extends boolean = true> {
   showNavigationButtons?: T;
   autoplay?: T;
   autoplayDelay?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FAQBlock_select".
+ */
+export interface FAQBlockSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  faqs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        isExpanded?: T;
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }
